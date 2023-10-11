@@ -30,9 +30,27 @@ namespace SistemaGestionData
         }
         public static void ModificarUsuario(Usuario usuario)
         {
+            using (var context = new SistemaGestionContext())
+            {
+                var usuarioEditado = context.Usuarios.Where(x => x.Id.Equals(usuario.Id)).Single();
+                usuarioEditado.Nombre = usuario.Nombre;
+                usuarioEditado.Apellido = usuario.Apellido;
+                usuarioEditado.NombreUsuario = usuario.NombreUsuario;
+                usuarioEditado.Contraseña = usuario.Contraseña;
+                usuarioEditado.Mail = usuario.Mail;
+                context.Entry(usuarioEditado).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
-        public static void EliminarUsuario(Usuario usuario)
+        public static void EliminarUsuario(int IdUsuario)
         {
+            using (var context = new SistemaGestionContext())
+            {
+                var usuario = context.Usuarios.Where(x => x.Id.Equals(IdUsuario)).Single();
+
+                context.Remove(usuario);
+                context.SaveChanges();
+            }
         }
     }
 }

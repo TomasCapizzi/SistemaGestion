@@ -30,18 +30,22 @@
         {
             dgUsuarios = new DataGridView();
             btnAgregarUsuario = new Button();
+            btnEditar = new DataGridViewButtonColumn();
+            btnEliminar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
             // 
             // dgUsuarios
             // 
             dgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgUsuarios.Columns.AddRange(new DataGridViewColumn[] { btnEditar, btnEliminar });
             dgUsuarios.Location = new Point(12, 148);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersWidth = 51;
             dgUsuarios.RowTemplate.Height = 29;
             dgUsuarios.Size = new Size(776, 260);
             dgUsuarios.TabIndex = 0;
+            dgUsuarios.CellContentClick += dgUsuarios_CellContentClick;
             // 
             // btnAgregarUsuario
             // 
@@ -52,6 +56,22 @@
             btnAgregarUsuario.Text = "Agregar";
             btnAgregarUsuario.UseVisualStyleBackColor = true;
             btnAgregarUsuario.Click += btnAgregarUsuario_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.HeaderText = "Editar";
+            btnEditar.MinimumWidth = 6;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Text = "Editar";
+            btnEditar.Width = 125;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.HeaderText = "Eliminar";
+            btnEliminar.MinimumWidth = 6;
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Width = 125;
             // 
             // frmUsuarios
             // 
@@ -71,5 +91,7 @@
 
         private DataGridView dgUsuarios;
         private Button btnAgregarUsuario;
+        private DataGridViewButtonColumn btnEditar;
+        private DataGridViewButtonColumn btnEliminar;
     }
 }

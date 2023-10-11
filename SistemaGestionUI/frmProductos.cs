@@ -24,6 +24,11 @@ namespace SistemaGestionUI
             dgProductos.AutoGenerateColumns = true;
             dgProductos.DataSource = ProductoBussines.ListaProductos();
         }
+        private void Producto_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            dgProductos.AutoGenerateColumns = true;
+            dgProductos.DataSource = ProductoBussines.ListaProductos();
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -31,10 +36,30 @@ namespace SistemaGestionUI
             producto.FormClosed += Producto_FormClosed;
             producto.ShowDialog();
         }
-        private void Producto_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void dgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgProductos.AutoGenerateColumns = true;
-            dgProductos.DataSource = ProductoBussines.ListaProductos();
+            if (e.RowIndex == -1 || e.ColumnIndex == -1) return;
+            if (this.dgProductos.Columns[e.ColumnIndex].Name == "btnEditar")
+            {
+                int IdProducto = (int)this.dgProductos.Rows[e.RowIndex].Cells["Id"].Value;
+
+                frmEditarProducto frmEditarProducto = new frmEditarProducto(IdProducto);
+                frmEditarProducto.FormClosed += Producto_FormClosed;
+                frmEditarProducto.ShowDialog();
+            }
+
+            if (this.dgProductos.Columns[e.ColumnIndex].Name == "btnEliminar")
+            {
+                int IdProducto = (int)this.dgProductos.Rows[e.RowIndex].Cells["Id"].Value;
+                DialogResult delete = MessageBox.Show("Desea Eliminar el producto?", "Producto Eliminado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (delete == DialogResult.Yes)
+                {
+                    ProductoBussines.EliminarProducto(IdProducto);
+                    dgProductos.AutoGenerateColumns = true;
+                    dgProductos.DataSource = ProductoBussines.ListaProductos();
+                }
+            }
         }
     }
 }

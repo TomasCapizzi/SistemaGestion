@@ -27,9 +27,9 @@ namespace SistemaGestionBussines
         {
             ProductoData.ModificarProducto(producto);
         }
-        public static void EliminarProducto(Producto producto)
+        public static void EliminarProducto(int IdProducto)
         {
-            ProductoData.EliminarProducto(producto);
+            ProductoData.EliminarProducto(IdProducto);
         }
     }
 }

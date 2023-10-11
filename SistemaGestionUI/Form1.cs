@@ -28,7 +28,7 @@ namespace SistemaGestionUI
         {
 
         }
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void Form1_FormClosed(object? sender, FormClosedEventArgs e)
         {
 
         }

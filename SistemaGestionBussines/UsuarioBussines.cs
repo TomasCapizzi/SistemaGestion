@@ -26,9 +26,9 @@ namespace SistemaGestionBussines
         {
             UsuarioData.ModificarUsuario(usuario);
         }
-        public static void EliminarUsuario(Usuario usuario)
+        public static void EliminarUsuario(int IdUsuario)
         {
-            UsuarioData.EliminarUsuario(usuario);
+            UsuarioData.EliminarUsuario(IdUsuario);
         }
     }
 }

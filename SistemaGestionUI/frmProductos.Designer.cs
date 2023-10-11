@@ -30,18 +30,22 @@
         {
             dgProductos = new DataGridView();
             btnAgregar = new Button();
+            btnEditar = new DataGridViewButtonColumn();
+            btnEliminar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgProductos).BeginInit();
             SuspendLayout();
             // 
             // dgProductos
             // 
             dgProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgProductos.Columns.AddRange(new DataGridViewColumn[] { btnEditar, btnEliminar });
             dgProductos.Location = new Point(2, 115);
             dgProductos.Name = "dgProductos";
             dgProductos.RowHeadersWidth = 51;
             dgProductos.RowTemplate.Height = 29;
             dgProductos.Size = new Size(1311, 486);
             dgProductos.TabIndex = 0;
+            dgProductos.CellContentClick += dgProductos_CellContentClick;
             // 
             // btnAgregar
             // 
@@ -52,6 +56,22 @@
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.HeaderText = "Editar";
+            btnEditar.MinimumWidth = 6;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Text = "Editar";
+            btnEditar.Width = 125;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.HeaderText = "Eliminar";
+            btnEliminar.MinimumWidth = 6;
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Width = 125;
             // 
             // frmProductos
             // 
@@ -71,5 +91,7 @@
 
         private DataGridView dgProductos;
         private Button btnAgregar;
+        private DataGridViewButtonColumn btnEditar;
+        private DataGridViewButtonColumn btnEliminar;
     }
 }
