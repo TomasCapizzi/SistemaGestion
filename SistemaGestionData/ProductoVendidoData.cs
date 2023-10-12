@@ -30,11 +30,25 @@ namespace SistemaGestionData
         }
         public static void ModificarProductoVendido(ProductoVendido productoVendido)
         {
-            ProductoVendidoData.ModificarProductoVendido(productoVendido);
+            using (var context = new SistemaGestionContext())
+            {
+                var productoVendidoEditado = context.ProductosVendidos.Where(x => x.Id.Equals(productoVendido.Id)).Single();
+                productoVendidoEditado.IdProducto = Convert.ToInt32(productoVendido.IdProducto);
+                productoVendidoEditado.Stock = productoVendido.Stock;
+                productoVendidoEditado.IdVenta = Convert.ToInt32(productoVendido.IdVenta); 
+                context.Entry(productoVendidoEditado).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
-        public static void EliminarProductoVendido(ProductoVendido productoVendido)
+        public static void EliminarProductoVendido(int IdProductoVendido)
         {
-            ProductoVendidoData.EliminarProductoVendido(productoVendido);
+            using (var context = new SistemaGestionContext())
+            {
+                var productoVendido = context.ProductosVendidos.Where(x => x.Id.Equals(IdProductoVendido)).Single();
+
+                context.Remove(productoVendido);
+                context.SaveChanges();
+            }
         }
     }
 }

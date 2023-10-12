@@ -51,7 +51,7 @@ namespace SistemaGestionUI
             if (this.dgUsuarios.Columns[e.ColumnIndex].Name == "btnEliminar")
             {
                 int IdUsuario = (int)this.dgUsuarios.Rows[e.RowIndex].Cells["Id"].Value;
-                DialogResult delete = MessageBox.Show("Desea Eliminar el producto?", "Producto Eliminado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult delete = MessageBox.Show("Desea Eliminar el usuario?", "Usuario Eliminado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (delete == DialogResult.Yes)
                 {
                     UsuarioBussines.EliminarUsuario(IdUsuario);

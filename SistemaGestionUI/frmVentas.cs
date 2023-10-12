@@ -35,5 +35,30 @@ namespace SistemaGestionUI
             dgVentas.AutoGenerateColumns = true;
             dgVentas.DataSource = VentaBussines.ListaVentas();
         }
+
+        private void dgVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.ColumnIndex == -1) return;
+            if (this.dgVentas.Columns[e.ColumnIndex].Name == "btnEditar")
+            {
+                int IdVenta = (int)this.dgVentas.Rows[e.RowIndex].Cells["Id"].Value;
+
+                frmEditarVenta frmEditarVenta = new frmEditarVenta(IdVenta);
+                frmEditarVenta.FormClosed += Venta_FormClosed;
+                frmEditarVenta.ShowDialog();
+            }
+
+            if (this.dgVentas.Columns[e.ColumnIndex].Name == "btnEliminar")
+            {
+                int IdVenta = (int)this.dgVentas.Rows[e.RowIndex].Cells["Id"].Value;
+                DialogResult delete = MessageBox.Show("Desea Eliminar la venta?", "Venta Eliminada", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (delete == DialogResult.Yes)
+                {
+                    VentaBussines.EliminarVenta(IdVenta);
+                    dgVentas.AutoGenerateColumns = true;
+                    dgVentas.DataSource = VentaBussines.ListaVentas();
+                }
+            }
+        }
     }
 }

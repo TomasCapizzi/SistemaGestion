@@ -30,11 +30,24 @@ namespace SistemaGestionData
         }
         public static void ModificarVenta(Venta venta)
         {
-            VentaData.ModificarVenta(venta);
+            using (var context = new SistemaGestionContext())
+            {
+                var ventaEditado = context.Ventas.Where(x => x.Id.Equals(venta.Id)).Single();
+                ventaEditado.IdUsuario = venta.IdUsuario;
+                ventaEditado.Comentarios = venta.Comentarios;
+                context.Entry(ventaEditado).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
-        public static void EliminarVenta(Venta venta)
+        public static void EliminarVenta(int IdVenta)
         {
-            VentaData.EliminarVenta(venta);
+            using (var context = new SistemaGestionContext())
+            {
+                var venta = context.Ventas.Where(x => x.Id.Equals(IdVenta)).Single();
+
+                context.Remove(venta);
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             dgVentas = new DataGridView();
+            btnEditar = new DataGridViewButtonColumn();
+            btnEliminar = new DataGridViewButtonColumn();
             btnAgregarVenta = new Button();
             ((System.ComponentModel.ISupportInitialize)dgVentas).BeginInit();
             SuspendLayout();
@@ -36,12 +38,28 @@
             // dgVentas
             // 
             dgVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgVentas.Columns.AddRange(new DataGridViewColumn[] { btnEditar, btnEliminar });
             dgVentas.Location = new Point(12, 86);
             dgVentas.Name = "dgVentas";
             dgVentas.RowHeadersWidth = 51;
             dgVentas.RowTemplate.Height = 29;
             dgVentas.Size = new Size(970, 332);
             dgVentas.TabIndex = 0;
+            dgVentas.CellContentClick += dgVentas_CellContentClick;
+            // 
+            // btnEditar
+            // 
+            btnEditar.HeaderText = "Editar";
+            btnEditar.MinimumWidth = 6;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Width = 125;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.HeaderText = "Eliminar";
+            btnEliminar.MinimumWidth = 6;
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Width = 125;
             // 
             // btnAgregarVenta
             // 
@@ -71,5 +89,7 @@
 
         private DataGridView dgVentas;
         private Button btnAgregarVenta;
+        private DataGridViewButtonColumn btnEditar;
+        private DataGridViewButtonColumn btnEliminar;
     }
 }
