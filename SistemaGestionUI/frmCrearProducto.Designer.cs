@@ -39,6 +39,7 @@
             numStock = new NumericUpDown();
             numIdUsuario = new NumericUpDown();
             txtDescripcion = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numCosto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecioVenta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numStock).BeginInit();
@@ -47,99 +48,126 @@
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new Point(150, 401);
+            btnConfirmar.BackColor = Color.SlateBlue;
+            btnConfirmar.Cursor = Cursors.Hand;
+            btnConfirmar.Font = new Font("Poppins", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.Location = new Point(421, 764);
+            btnConfirmar.Margin = new Padding(4, 5, 4, 5);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(94, 39);
+            btnConfirmar.Size = new Size(170, 80);
             btnConfirmar.TabIndex = 0;
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += btnConfirmar_Click;
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(63, 19);
+            lblDescripcion.Location = new Point(450, 204);
+            lblDescripcion.Margin = new Padding(4, 0, 4, 0);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(87, 20);
+            lblDescripcion.Size = new Size(137, 34);
             lblDescripcion.TabIndex = 1;
-            lblDescripcion.Text = "Descripción";
+            lblDescripcion.Text = "Descripción*";
             // 
             // lblStock
             // 
             lblStock.AutoSize = true;
-            lblStock.Location = new Point(63, 246);
+            lblStock.Location = new Point(474, 530);
+            lblStock.Margin = new Padding(4, 0, 4, 0);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(45, 20);
+            lblStock.Size = new Size(67, 34);
             lblStock.TabIndex = 2;
             lblStock.Text = "Stock";
             // 
             // lblPrecioVenta
             // 
             lblPrecioVenta.AutoSize = true;
-            lblPrecioVenta.Location = new Point(63, 161);
+            lblPrecioVenta.Location = new Point(425, 416);
+            lblPrecioVenta.Margin = new Padding(4, 0, 4, 0);
             lblPrecioVenta.Name = "lblPrecioVenta";
-            lblPrecioVenta.Size = new Size(112, 20);
+            lblPrecioVenta.Size = new Size(175, 34);
             lblPrecioVenta.TabIndex = 3;
-            lblPrecioVenta.Text = "Precio de Venta";
+            lblPrecioVenta.Text = "Precio de Venta*";
             // 
             // lblCosto
             // 
             lblCosto.AutoSize = true;
-            lblCosto.Location = new Point(63, 83);
+            lblCosto.Location = new Point(474, 296);
+            lblCosto.Margin = new Padding(4, 0, 4, 0);
             lblCosto.Name = "lblCosto";
-            lblCosto.Size = new Size(47, 20);
+            lblCosto.Size = new Size(80, 34);
             lblCosto.TabIndex = 4;
-            lblCosto.Text = "Costo";
+            lblCosto.Text = "Costo*";
             // 
             // lblIdUsuario
             // 
             lblIdUsuario.AutoSize = true;
-            lblIdUsuario.Location = new Point(63, 314);
+            lblIdUsuario.Location = new Point(450, 635);
+            lblIdUsuario.Margin = new Padding(4, 0, 4, 0);
             lblIdUsuario.Name = "lblIdUsuario";
-            lblIdUsuario.Size = new Size(76, 20);
+            lblIdUsuario.Size = new Size(119, 34);
             lblIdUsuario.TabIndex = 5;
-            lblIdUsuario.Text = "Id Usuario";
+            lblIdUsuario.Text = "Id Usuario*";
             // 
             // numCosto
             // 
-            numCosto.Location = new Point(63, 106);
+            numCosto.Location = new Point(379, 335);
+            numCosto.Margin = new Padding(4, 5, 4, 5);
             numCosto.Name = "numCosto";
-            numCosto.Size = new Size(150, 27);
+            numCosto.Size = new Size(286, 35);
             numCosto.TabIndex = 6;
             // 
             // numPrecioVenta
             // 
-            numPrecioVenta.Location = new Point(63, 184);
+            numPrecioVenta.Location = new Point(379, 455);
+            numPrecioVenta.Margin = new Padding(4, 5, 4, 5);
             numPrecioVenta.Name = "numPrecioVenta";
-            numPrecioVenta.Size = new Size(150, 27);
+            numPrecioVenta.Size = new Size(286, 35);
             numPrecioVenta.TabIndex = 7;
             // 
             // numStock
             // 
-            numStock.Location = new Point(63, 269);
+            numStock.Location = new Point(376, 569);
+            numStock.Margin = new Padding(4, 5, 4, 5);
             numStock.Name = "numStock";
-            numStock.Size = new Size(150, 27);
+            numStock.Size = new Size(286, 35);
             numStock.TabIndex = 8;
             // 
             // numIdUsuario
             // 
-            numIdUsuario.Location = new Point(63, 337);
+            numIdUsuario.Location = new Point(376, 674);
+            numIdUsuario.Margin = new Padding(4, 5, 4, 5);
             numIdUsuario.Name = "numIdUsuario";
-            numIdUsuario.Size = new Size(150, 27);
+            numIdUsuario.Size = new Size(286, 35);
             numIdUsuario.TabIndex = 9;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(61, 47);
+            txtDescripcion.Location = new Point(376, 243);
+            txtDescripcion.Margin = new Padding(4, 5, 4, 5);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(152, 27);
+            txtDescripcion.Size = new Size(286, 35);
             txtDescripcion.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(379, 110);
+            label1.Name = "label1";
+            label1.Size = new Size(289, 53);
+            label1.TabIndex = 11;
+            label1.Text = "Crea un Producto";
             // 
             // frmCrearProducto
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 481);
+            BackColor = Color.Linen;
+            ClientSize = new Size(1062, 1033);
+            Controls.Add(label1);
             Controls.Add(txtDescripcion);
             Controls.Add(numIdUsuario);
             Controls.Add(numStock);
@@ -151,6 +179,9 @@
             Controls.Add(lblStock);
             Controls.Add(lblDescripcion);
             Controls.Add(btnConfirmar);
+            Font = new Font("Poppins", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.SlateBlue;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmCrearProducto";
             Text = "frmCrearProducto";
             Load += frmCrearProducto_Load;
@@ -175,5 +206,6 @@
         private NumericUpDown numStock;
         private NumericUpDown numIdUsuario;
         private TextBox txtDescripcion;
+        private Label label1;
     }
 }

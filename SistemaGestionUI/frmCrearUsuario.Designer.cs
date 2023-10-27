@@ -39,103 +39,131 @@
             txtContraseña = new TextBox();
             txtMail = new TextBox();
             lblNombreUsuario = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(57, 51);
+            txtNombre.Location = new Point(367, 231);
+            txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(224, 27);
+            txtNombre.Size = new Size(307, 35);
             txtNombre.TabIndex = 21;
             // 
             // lblMail
             // 
             lblMail.AutoSize = true;
-            lblMail.Location = new Point(57, 293);
+            lblMail.Location = new Point(476, 603);
+            lblMail.Margin = new Padding(4, 0, 4, 0);
             lblMail.Name = "lblMail";
-            lblMail.Size = new Size(38, 20);
+            lblMail.Size = new Size(63, 34);
             lblMail.TabIndex = 16;
-            lblMail.Text = "Mail";
+            lblMail.Text = "Mail*";
             // 
             // lbApellido
             // 
             lbApellido.AutoSize = true;
-            lbApellido.Location = new Point(59, 87);
+            lbApellido.Location = new Point(459, 283);
+            lbApellido.Margin = new Padding(4, 0, 4, 0);
             lbApellido.Name = "lbApellido";
-            lbApellido.Size = new Size(66, 20);
+            lbApellido.Size = new Size(102, 34);
             lbApellido.TabIndex = 15;
-            lbApellido.Text = "Apellido";
+            lbApellido.Text = "Apellido*";
             // 
             // lblContraseña
             // 
             lblContraseña.AutoSize = true;
-            lblContraseña.Location = new Point(57, 225);
+            lblContraseña.Location = new Point(447, 497);
+            lblContraseña.Margin = new Padding(4, 0, 4, 0);
             lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new Size(83, 20);
+            lblContraseña.Size = new Size(137, 34);
             lblContraseña.TabIndex = 13;
-            lblContraseña.Text = "Contraseña";
+            lblContraseña.Text = "Contraseña*";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(59, 23);
+            lblNombre.Location = new Point(459, 192);
+            lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(101, 34);
             lblNombre.TabIndex = 12;
-            lblNombre.Text = "Nombre";
+            lblNombre.Text = "Nombre*";
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new Point(146, 405);
+            btnConfirmar.BackColor = Color.SlateBlue;
+            btnConfirmar.Cursor = Cursors.Hand;
+            btnConfirmar.Font = new Font("Poppins", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.Location = new Point(422, 752);
+            btnConfirmar.Margin = new Padding(4, 5, 4, 5);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(94, 39);
+            btnConfirmar.Size = new Size(170, 80);
             btnConfirmar.TabIndex = 11;
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += btnConfirmar_Click;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(57, 110);
+            txtApellido.Location = new Point(367, 322);
+            txtApellido.Margin = new Padding(4, 5, 4, 5);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(224, 27);
+            txtApellido.Size = new Size(307, 35);
             txtApellido.TabIndex = 22;
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(59, 181);
+            txtNombreUsuario.Location = new Point(370, 432);
+            txtNombreUsuario.Margin = new Padding(4, 5, 4, 5);
             txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(222, 27);
+            txtNombreUsuario.Size = new Size(303, 35);
             txtNombreUsuario.TabIndex = 23;
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(57, 248);
+            txtContraseña.Location = new Point(367, 536);
+            txtContraseña.Margin = new Padding(4, 5, 4, 5);
             txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(222, 27);
+            txtContraseña.Size = new Size(303, 35);
             txtContraseña.TabIndex = 24;
             // 
             // txtMail
             // 
-            txtMail.Location = new Point(59, 316);
+            txtMail.Location = new Point(370, 642);
+            txtMail.Margin = new Padding(4, 5, 4, 5);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(222, 27);
+            txtMail.Size = new Size(303, 35);
             txtMail.TabIndex = 25;
             // 
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(59, 158);
+            lblNombreUsuario.Location = new Point(422, 393);
+            lblNombreUsuario.Margin = new Padding(4, 0, 4, 0);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(118, 20);
+            lblNombreUsuario.Size = new Size(178, 34);
             lblNombreUsuario.TabIndex = 26;
-            lblNombreUsuario.Text = "Nombre Usuario";
+            lblNombreUsuario.Text = "Nombre Usuario*";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(385, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(260, 53);
+            label1.TabIndex = 27;
+            label1.Text = "Crea tu Usuario";
             // 
             // frmCrearUsuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 468);
+            BackColor = Color.Linen;
+            ClientSize = new Size(1062, 1033);
+            Controls.Add(label1);
             Controls.Add(lblNombreUsuario);
             Controls.Add(txtMail);
             Controls.Add(txtContraseña);
@@ -147,6 +175,9 @@
             Controls.Add(lblContraseña);
             Controls.Add(lblNombre);
             Controls.Add(btnConfirmar);
+            Font = new Font("Poppins", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.SlateBlue;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmCrearUsuario";
             Text = "frmCrearUsuario";
             Load += frmCrearUsuario_Load;
@@ -167,5 +198,6 @@
         private TextBox txtContraseña;
         private TextBox txtMail;
         private Label lblNombreUsuario;
+        private Label label1;
     }
 }

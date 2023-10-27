@@ -2,9 +2,12 @@
 using SistemaGestionEntities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Xceed.Wpf.Toolkit;
 
 namespace SistemaGestionData
 {
@@ -40,6 +43,7 @@ namespace SistemaGestionData
                 context.SaveChanges();
             }
         }
+        
         public static void EliminarProductoVendido(int IdProductoVendido)
         {
             using (var context = new SistemaGestionContext())

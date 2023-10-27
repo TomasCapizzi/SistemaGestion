@@ -29,7 +29,7 @@ namespace SistemaGestionData
             }
         }
         public static void ModificarProducto(Producto producto)
-        {
+        { 
             using (var context = new SistemaGestionContext())
             {
                 var productoEditado = context.Productos.Where(x => x.Id.Equals(producto.Id)).Single();

@@ -33,61 +33,86 @@
             numIdUsuario = new NumericUpDown();
             lblPrecioVenta = new Label();
             lblComentarios = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numIdUsuario).BeginInit();
             SuspendLayout();
             // 
             // txtComentario
             // 
-            txtComentario.Location = new Point(52, 195);
+            txtComentario.Location = new Point(352, 396);
+            txtComentario.Margin = new Padding(4, 5, 4, 5);
             txtComentario.Name = "txtComentario";
-            txtComentario.Size = new Size(253, 27);
+            txtComentario.Size = new Size(346, 35);
             txtComentario.TabIndex = 21;
             // 
             // btnConfirmarVenta
             // 
-            btnConfirmarVenta.Location = new Point(52, 276);
+            btnConfirmarVenta.BackColor = Color.SlateBlue;
+            btnConfirmarVenta.Cursor = Cursors.Hand;
+            btnConfirmarVenta.Font = new Font("Poppins", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfirmarVenta.ForeColor = Color.White;
+            btnConfirmarVenta.Location = new Point(416, 536);
+            btnConfirmarVenta.Margin = new Padding(4, 5, 4, 5);
             btnConfirmarVenta.Name = "btnConfirmarVenta";
-            btnConfirmarVenta.Size = new Size(124, 57);
+            btnConfirmarVenta.Size = new Size(170, 80);
             btnConfirmarVenta.TabIndex = 20;
             btnConfirmarVenta.Text = "Confirmar";
-            btnConfirmarVenta.UseVisualStyleBackColor = true;
+            btnConfirmarVenta.UseVisualStyleBackColor = false;
             btnConfirmarVenta.Click += btnConfirmarVenta_Click;
             // 
             // numIdUsuario
             // 
-            numIdUsuario.Location = new Point(52, 110);
+            numIdUsuario.Location = new Point(352, 273);
+            numIdUsuario.Margin = new Padding(4, 5, 4, 5);
             numIdUsuario.Name = "numIdUsuario";
-            numIdUsuario.Size = new Size(150, 27);
+            numIdUsuario.Size = new Size(346, 35);
             numIdUsuario.TabIndex = 19;
             // 
             // lblPrecioVenta
             // 
             lblPrecioVenta.AutoSize = true;
-            lblPrecioVenta.Location = new Point(52, 87);
+            lblPrecioVenta.Location = new Point(454, 219);
+            lblPrecioVenta.Margin = new Padding(4, 0, 4, 0);
             lblPrecioVenta.Name = "lblPrecioVenta";
-            lblPrecioVenta.Size = new Size(76, 20);
+            lblPrecioVenta.Size = new Size(110, 34);
             lblPrecioVenta.TabIndex = 18;
             lblPrecioVenta.Text = "Id Usuario";
             // 
             // lblComentarios
             // 
             lblComentarios.AutoSize = true;
-            lblComentarios.Location = new Point(52, 172);
+            lblComentarios.Location = new Point(436, 342);
+            lblComentarios.Margin = new Padding(4, 0, 4, 0);
             lblComentarios.Name = "lblComentarios";
-            lblComentarios.Size = new Size(93, 20);
+            lblComentarios.Size = new Size(140, 34);
             lblComentarios.TabIndex = 17;
             lblComentarios.Text = "Comentarios";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(390, 98);
+            label1.Name = "label1";
+            label1.Size = new Size(243, 53);
+            label1.TabIndex = 22;
+            label1.Text = "Editar la venta";
+            // 
             // frmEditarVenta
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(376, 450);
+            BackColor = Color.Linen;
+            ClientSize = new Size(1062, 1033);
+            Controls.Add(label1);
             Controls.Add(txtComentario);
             Controls.Add(btnConfirmarVenta);
             Controls.Add(numIdUsuario);
             Controls.Add(lblPrecioVenta);
             Controls.Add(lblComentarios);
+            Font = new Font("Poppins", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.SlateBlue;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmEditarVenta";
             Text = "frmEditarVenta";
             Load += frmEditarVenta_Load;
@@ -103,5 +128,6 @@
         private NumericUpDown numIdUsuario;
         private Label lblPrecioVenta;
         private Label lblComentarios;
+        private Label label1;
     }
 }

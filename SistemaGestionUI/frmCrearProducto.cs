@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace SistemaGestionUI
         {
             InitializeComponent();
         }
-
+        string path = @"https://localhost:7003/api/Productos";
         private void frmCrearProducto_Load(object sender, EventArgs e)
         {
 
@@ -34,8 +35,37 @@ namespace SistemaGestionUI
                 Stock = numStock.Value,
                 IdUsuario = Convert.ToInt32(numIdUsuario.Value)
             };
-            ProductoBussines.CrearProducto(producto);
-            this.Close();
+
+            if (txtDescripcion.Text != "" && numCosto.Value != 0 && numPrecioVenta.Value != 0 && numIdUsuario.Value != 0)
+            {
+                PostProducto(producto);
+                //ProductoBussines.CrearProducto(producto);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debes completar los campos obligatorios");
+            }
+        }
+        private async Task<bool> PostProducto(Producto producto)
+        {
+            HttpClient client = new HttpClient();
+
+            HttpResponseMessage response = await client.PostAsJsonAsync(path, producto);
+            response.EnsureSuccessStatusCode();
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                MessageBox.Show("Se creó el producto correctamente");
+                this.Close();
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al crear el producto");
+                return false;
+            }
+
         }
     }
 }
