@@ -30,7 +30,6 @@ namespace SistemaGestionUI
         }
         private void btnProductos_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("que pasa");
             frmProductos producto = new frmProductos();
             producto.FormClosed += frmMenu_FormClosed;
             producto.ShowDialog();

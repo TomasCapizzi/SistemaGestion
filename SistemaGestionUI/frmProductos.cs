@@ -23,6 +23,7 @@ namespace SistemaGestionUI
         string path = @"https://localhost:7003/api/Productos";
         string pathProdVendido = @"https://localhost:7003/api/ProductosVendidos";
         private Producto? producto = null;
+        private ProductoVendido? productoVendido = null;
         private async Task getProductos()
         {
             HttpClient client = new HttpClient();
@@ -85,6 +86,16 @@ namespace SistemaGestionUI
                 if (delete == DialogResult.Yes)
                 {
                     EliminarProducto(IdProducto);
+                    /*
+                    bool chequear = Convert.ToBoolean(ChequearProductosVendidos(IdProducto));
+                    if (!chequear)
+                    {
+                        EliminarProducto(IdProducto);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Primero debes eliminar los productos vendidos de este producto");
+                    }*/
                     getProductos();
                     /*
                     ProductoBussines.EliminarProducto(IdProducto);
@@ -160,6 +171,31 @@ namespace SistemaGestionUI
                     getProductos();
                 }
             }
+        }
+        private async Task<bool> ChequearProductosVendidos(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(pathProdVendido);
+                List<ProductoVendido>? listadoProductosVendidos = null;
+                if (response.IsSuccessStatusCode)
+                {
+                    listadoProductosVendidos = await response.Content.ReadFromJsonAsync<List<ProductoVendido>>();
+                    this.productoVendido = listadoProductosVendidos?.Where(x => x.IdProducto.Equals(id)).SingleOrDefault();
+                    if (productoVendido != null)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
     }
 }
